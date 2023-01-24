@@ -7,7 +7,7 @@ CORS(app)
 app.template_folder = './frontend'
 
 
-CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5500"}})
+CORS(app resources= r /* origins * )
 
 @app.route('/', methods=['GET'])
 def index():
