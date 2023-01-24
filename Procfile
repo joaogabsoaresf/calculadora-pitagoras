@@ -1,1 +1,1 @@
-web: gunicorn nome_do_seu_arquivo_principal:app
+web: gunicorn app.py:app
