@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Calculadora de Pitágoras</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>TEOREMA DE PITÁGORAS</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="hipotenusa">Valor do Hipotenusa</label>
+                        <input type="number" id="hipotenusa" placeholder="Digite o valor da hipotenusa" step="0.01">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cateto1">Cateto 1</label>
+                        <input type="number" id="cateto1" placeholder="Digite o valor do cateto" step="0.01">
+                    </div>
+                    <div class="input-box">
+                        <label for="cateto2">Cateto 2</label>
+                        <input type="number" id="cateto2" placeholder="Digite o valor do cateto" step="0.01">
+                    </div>
+
+                </div>
+
+                <div class="continue-button">
+                    <button id="calcular"><a href="#">Calcular</a> </button>
+                </div>
+                <div class="continue-button">
+                    <button id="limpar"><a href="#" class="clean">Limpar</a> </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
