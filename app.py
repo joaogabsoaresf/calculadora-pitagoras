@@ -1,6 +1,6 @@
-from flask import Flask, request, Response
+from flask import Flask, request
 from flask_cors import CORS
-import json
+from src import Calculo
 app = Flask(__name__)
 CORS(app)
 
@@ -12,7 +12,17 @@ def index():
 
 @app.route('/calcula', methods=['POST'])
 def calcula():
-    return 'Conta Feita'
+    hipotenusa = request.json.get('hipotenusa')
+    cateto1 = request.json.get('cateto1')
+    cateto2 = request.json.get('cateto2')
+
+    calculo = Calculo.Calculo(
+        hipotenusa = hipotenusa,
+        cateto1 = cateto1,
+        cateto2 = cateto2
+        )
+    
+    return calculo.pegar_retorno()
 
 if __name__ == '__main__':
     app.run(debug=True)
