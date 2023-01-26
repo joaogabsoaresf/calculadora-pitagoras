@@ -1,16 +1,24 @@
+// Adiciona um event listener para o botão "calcular" que chama a função gerenciador quando clicado
 var continuar = document.getElementById("calcular");
 continuar.addEventListener("click", gerenciador)
 
-var continuar = document.getElementById("limpar");
-continuar.addEventListener("click", limparDados)
+// Adiciona um event listener para o botão "limpar" que chama a função limparDados quando clicado
+var limpar = document.getElementById("limpar");
+limpar.addEventListener("click", limparDados)
 
-
+/**
+ * A função gerenciador valida a entrada dos dados e envia uma solicitação à API para calcular o valor faltante.
+ */
 function gerenciador(){
     if (validaEntrada()){
         const data = enviarReq()
     }
 }
 
+/**
+ * A função validaEntrada verifica se todos os campos estão preenchidos e, se sim, exibe uma mensagem de erro pedindo para preencher apenas dois campos.
+ * return {boolean} - Retorna true se a entrada é válida e false se não é válida
+ */
 function validaEntrada(){
     var hipotenusa = document.getElementById("hipotenusa").value;
     var cateto1 = document.getElementById("cateto1").value;
@@ -26,12 +34,18 @@ function validaEntrada(){
     }
 }
 
+/**
+ * A função limparDados limpa todos os campos de entrada.
+ */
 function limparDados(){
     var hipotenusa = document.getElementById("hipotenusa").value = null;
     var cateto1 = document.getElementById("cateto1").value = null;
     var cateto2 = document.getElementById("cateto2").value = null;
 }
 
+/**
+ * A função enviarReq envia uma solicitação POST à API com os valores dos campos de entrada e atualiza o campo faltante com o resultado retornado pela API.
+ */
 function enviarReq(){
     if (validaEntrada()){
         fetch("https://calculadora-pitagoras-backend.herokuapp.com/calcula", {
@@ -53,6 +67,9 @@ function enviarReq(){
     
 }
 
+/**
+ * A função atualizarCampo atualiza o campo faltante.
+ */
 function atualizarCampo(data){
     console.log(data.side)
     console.log(data.result)
