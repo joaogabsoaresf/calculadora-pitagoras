@@ -15,21 +15,15 @@ def calcula():
 
     print(request.json)
 
-    print(type(request.json['hipotenusa']))
-    print(type(request.json['cateto1']))
-    # print(type(request.json['cateto2']))
-
-    return 'OK'
-
-    # calculo = Calculo.Calculo(
-    #     hipotenusa = request.json.get('hipotenusa'),
-    #     cateto1 = request.json.get('cateto1'),
-    #     cateto2 = request.json.get('cateto2')
-    #     )
+    calculo = Calculo.Calculo(
+        hipotenusa = request.json.get('hipotenusa'),
+        cateto1 = request.json.get('cateto1'),
+        cateto2 = request.json.get('cateto2')
+        )
     
-    # print(vars(calculo))
+    print(vars(calculo))
     
-    # return calculo.pegar_retorno()
+    return calculo.pegar_retorno()
 
 if __name__ == '__main__':
     app.run(debug=True)
