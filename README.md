@@ -6,3 +6,4 @@ Fiz a aplicação reativa utilizando media queries em CSS.<br>
 
 <img src="https://i.imgur.com/HDNpdDZ.gif" alt="demo"/>
 
+O back-end coloquei no heroku, e o site no netlify
