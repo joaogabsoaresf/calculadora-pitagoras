@@ -37,7 +37,7 @@ function limparDados(){
 
 function enviarReq(){
     if (validaEntrada()){
-        fetch("https://calculadora-pitagoras-joao.herokuapp.com/calcula", {
+        fetch("https://calculadora-pitagoras-backend.herokuapp.com/calcula", {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ 

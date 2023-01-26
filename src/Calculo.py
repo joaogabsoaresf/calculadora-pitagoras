@@ -1,8 +1,8 @@
 class Calculo:
     def __init__(self, **kwargs) -> None:
-        self.hipotenusa = float(kwargs.get('hipotenusa'))
-        self.cateto1 = float(kwargs.get('cateto1'))
-        self.cateto2 = float(kwargs.get('cateto2'))
+        self.hipotenusa = kwargs.get('hipotenusa')
+        self.cateto1 = kwargs.get('cateto1')
+        self.cateto2 = kwargs.get('cateto2')
 
     def pegar_retorno(self):
         if not self.hipotenusa:
