@@ -17,7 +17,7 @@ def calcula():
 
     print(type(request.json['hipotenusa']))
     print(type(request.json['cateto1']))
-    print(type(request.json['cateto2']))
+    # print(type(request.json['cateto2']))
 
     return 'OK'
 
