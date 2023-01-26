@@ -1,5 +1,5 @@
 var continuar = document.getElementById("calcular");
-continuar.addEventListener("click", enviarReq)
+continuar.addEventListener("click", gerenciador)
 
 var continuar = document.getElementById("limpar");
 continuar.addEventListener("click", limparDados)
@@ -7,10 +7,7 @@ continuar.addEventListener("click", limparDados)
 
 function gerenciador(){
     if (validaEntrada()){
-        data = enviarReq()
-        if (typeof data == object){
-            atualizarCampo(data['side'], data['result'])
-        }
+        const data = enviarReq()
     }
 }
 
@@ -41,21 +38,24 @@ function enviarReq(){
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ 
-                hipotenusa: document.getElementById("hipotenusa").value, 
-                cateto1: document.getElementById("cateto1").value,
-                cateto1: document.getElementById("cateto2").value,        
+                hipotenusa: parseFloat(document.getElementById("hipotenusa").value), 
+                cateto1: parseFloat(document.getElementById("cateto1").value),
+                cateto2: parseFloat(document.getElementById("cateto2").value),        
                 })
             })
-            .then(response => response.text())
-            .then(data => console.log(data))
+            .then(response => response.json())
+            .then(data => 
+                {console.log(data);
+                atualizarCampo(data);
+            })
             .catch(error => console.error(error));
-        
-            return data
     }
     
 }
 
-function atualizarCampo(campo, valor){
-    var cateto2 = document.getElementById(campo).value = valor
+function atualizarCampo(data){
+    console.log(data.side)
+    console.log(data.result)
+    document.getElementById(data.side).value = data.result
 }
 
